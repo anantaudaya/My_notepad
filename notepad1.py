@@ -24,7 +24,6 @@ def newfile():
 def openfile():
     global file1
     file1 = askopenfilename(filetypes=[("All Files", "*.*"),("Text Documents", "*.txt")])
-    print(file1)
     if file1 == "":
         file1 = None
     else:
@@ -43,7 +42,6 @@ def savefile():
         if file1 =="":
             file1 = None
         else:
-            #Save as a new file
             f = open(file1, "w")
             f.write(textarea.get(1.0, END))
             f.close()
@@ -51,7 +49,6 @@ def savefile():
             root.title(os.path.basename(file1) + " - Notepad")
             print("File Saved")
     else:
-        # Save the file
         f = open(file1, "w")
         f.write(textarea.get(1.0, END))
         f.close()
@@ -90,7 +87,6 @@ def on_close():
         root.destroy()
     elif value12=="yes":
         value123 = askquestion("Notepad",f"Do you want save the recent file ?")
-        print(textarea.get(1.0,END))
         if value123=="yes":
             savefile()
         root.destroy()
