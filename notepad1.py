@@ -131,7 +131,7 @@ if __name__=="__main__":
     scroll.pack(side=RIGHT, fill=Y)
     scroll.config(command= textarea.yview)
     textarea.config(yscrollcommand = scroll.set)
-    textarea.insert(1.0,"Wellcome to Notepad")
+    textarea.insert(1.0,"Welcome to Notepad")
     textarea.bind( "<Button>", callback)
 
     root.protocol('WM_DELETE_WINDOW',on_close)
